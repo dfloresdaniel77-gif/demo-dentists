@@ -49,7 +49,7 @@ export default function DemoFour() {
 
         <div 
           ref={containerRef}
-          className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-xl shadow-2xl cursor-ew-resize select-none"
+          className="relative w-full max-w-2xl mx-auto aspect-square md:aspect-[4/3] overflow-hidden rounded-xl shadow-2xl cursor-ew-resize select-none"
           onMouseMove={handleMouseMove}
           onTouchMove={handleTouchMove}
           onMouseDown={(e) => {
