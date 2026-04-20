@@ -64,7 +64,7 @@ export default function DemoFour() {
           {/* After image (Base) */}
           <div className="absolute inset-0">
             <Image 
-              src="/assets/after.png" 
+              src="/assets/after.jpg" 
               alt="After Transformation" 
               fill 
               className="object-cover object-center pointer-events-none"
@@ -77,7 +77,7 @@ export default function DemoFour() {
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <Image 
-              src="/assets/before.png" 
+              src="/assets/before.jpg" 
               alt="Before Transformation" 
               fill 
               className="object-cover object-center pointer-events-none"

@@ -1,23 +1,21 @@
-from PIL import Image, ImageEnhance
+from PIL import Image, ImageEnhance, ImageFilter
 
-# Open the image
-img = Image.open('public/assets/after.png').convert('RGB')
-
-# Split bands
+img = Image.open('public/assets/after.jpg').convert('RGB')
 r, g, b = img.split()
 
-# Apply tint: increase red and green slightly, decrease blue to make it yellowish
-r = r.point(lambda i: min(255, int(i * 1.05)))
-g = g.point(lambda i: min(255, int(i * 1.02)))
-b = b.point(lambda i: int(i * 0.75))
+def stain_red(c): return min(255, int(c * 0.95))
+def stain_green(c): return min(255, int(c * 0.92))
+def stain_blue(c): return min(255, int(c * 0.65 if c > 120 else c * 0.8))
 
-# Merge back
+r = r.point(stain_red)
+g = g.point(stain_green)
+b = b.point(stain_blue)
+
 out = Image.merge('RGB', (r, g, b))
 
-# Decrease brightness to look less pristine
-enhancer_brightness = ImageEnhance.Brightness(out)
-out = enhancer_brightness.enhance(0.85)
+out = ImageEnhance.Contrast(out).enhance(0.7)
+out = ImageEnhance.Brightness(out).enhance(0.85)
+out = out.filter(ImageFilter.GaussianBlur(radius=0.7))
 
-# Save
-out.save('public/assets/before.png')
-print("before.png generated successfully.")
+out.save('public/assets/before.jpg')
+print("Improved before.jpg generated")
