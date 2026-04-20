@@ -3,6 +3,7 @@ import DemoTwo from "@/components/demo-2";
 import DemoThree from "@/components/demo-3";
 import DemoFour from "@/components/demo-4";
 import DemoFive from "@/components/demo-5";
+import BookingEmbed from "@/components/booking-embed";
 import FounderProfile from "@/components/founder-profile";
 import Testimonials from "@/components/testimonials";
 
@@ -30,7 +31,7 @@ export default function Home() {
       <DemoFour />
 
       {/* Booking Section */}
-      <DemoFive />
+      <BookingEmbed />
 
       {/* Testimonials Section */}
       <Testimonials />
