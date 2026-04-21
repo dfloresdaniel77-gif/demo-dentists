@@ -3,7 +3,6 @@ import DemoTwo from "@/components/demo-2";
 import DemoThree from "@/components/demo-3";
 import DemoFour from "@/components/demo-4";
 import DemoFive from "@/components/demo-5";
-import BookingEmbed from "@/components/booking-embed";
 import FounderProfile from "@/components/founder-profile";
 import Testimonials from "@/components/testimonials";
 
@@ -30,8 +29,8 @@ export default function Home() {
       {/* Transformations Slider Section */}
       <DemoFour />
 
-      {/* Booking Section */}
-      <BookingEmbed />
+      {/* Booking Section (Custom Form) */}
+      <DemoFive />
 
       {/* Testimonials Section */}
       <Testimonials />

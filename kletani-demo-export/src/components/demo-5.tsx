@@ -13,11 +13,12 @@ export default function DemoFive() {
           </p>
         </div>
 
-        <form className="flex flex-col gap-10">
+        <form action="https://submit-form.com/l4Eni4jKF" method="POST" className="flex flex-col gap-10">
           <div className="relative group">
             <input 
               type="text" 
               id="fullName" 
+              name="Nombre"
               className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
               placeholder="Nombre Completo"
               required 
@@ -34,6 +35,7 @@ export default function DemoFive() {
             <input 
               type="email" 
               id="email" 
+              name="Email"
               className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
               placeholder="Correo Electrónico"
               required 
