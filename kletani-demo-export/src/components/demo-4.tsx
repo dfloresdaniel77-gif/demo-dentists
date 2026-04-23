@@ -61,10 +61,9 @@ export default function DemoFour() {
             handleMove(e.touches[0].clientX);
           }}
         >
-          {/* After image (Base) */}
           <div className="absolute inset-0">
             <Image 
-              src="/assets/after.jpg" 
+              src="/assets/after_new.png" 
               alt="After Transformation" 
               fill 
               className="object-cover object-center pointer-events-none"
