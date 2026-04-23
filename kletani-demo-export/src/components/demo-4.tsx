@@ -77,7 +77,7 @@ export default function DemoFour() {
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <Image 
-              src="/assets/before.jpg" 
+              src="/assets/before_new.png" 
               alt="Before Transformation" 
               fill 
               className="object-cover object-center pointer-events-none"
