@@ -83,36 +83,44 @@ export default function DemoFive() {
               </label>
             </div>
 
-            <div className="relative group">
-              <input 
-                type="email" 
-                id="email" 
-                name="Email"
-                className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
-                placeholder="Correo Electrónico"
-              />
-              <label 
-                htmlFor="email" 
-                className="absolute left-0 top-3 text-gray-400 text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-black peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-black cursor-text"
-              >
-                Correo Electrónico (Opcional)
-              </label>
-            </div>
+            <div className="flex flex-col gap-6">
+              <div className="relative group">
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="Email"
+                  className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
+                  placeholder="Correo Electrónico"
+                />
+                <label 
+                  htmlFor="email" 
+                  className="absolute left-0 top-3 text-gray-400 text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-black peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-black cursor-text"
+                >
+                  Correo Electrónico
+                </label>
+              </div>
 
-            <div className="relative group">
-              <input 
-                type="tel" 
-                id="phone" 
-                name="Teléfono"
-                className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
-                placeholder="Teléfono"
-              />
-              <label 
-                htmlFor="phone" 
-                className="absolute left-0 top-3 text-gray-400 text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-black peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-black cursor-text"
-              >
-                Número de Teléfono (Opcional)
-              </label>
+              <div className="flex items-center justify-center pt-2">
+                <div className="h-px bg-gray-200 flex-grow"></div>
+                <span className="px-4 text-gray-400 text-xs font-medium tracking-widest uppercase">O</span>
+                <div className="h-px bg-gray-200 flex-grow"></div>
+              </div>
+
+              <div className="relative group pb-2">
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="Teléfono"
+                  className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
+                  placeholder="Teléfono"
+                />
+                <label 
+                  htmlFor="phone" 
+                  className="absolute left-0 top-3 text-gray-400 text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-black peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-black cursor-text"
+                >
+                  Número de Teléfono
+                </label>
+              </div>
             </div>
 
             {errorMsg && (
