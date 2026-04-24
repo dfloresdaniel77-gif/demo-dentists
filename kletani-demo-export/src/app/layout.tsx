@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kletani Estudio Dental",
+  title: "Kletáni Estudio Dental",
   description: "Estudio Dental de Lujo",
 };
 

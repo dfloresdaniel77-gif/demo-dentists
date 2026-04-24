@@ -41,7 +41,7 @@ export default function FounderProfile() {
 
           {/* Signature or Name */}
           <div className="pt-8">
-            <h3 className="text-xl font-medium tracking-widest uppercase text-black">Kletani Dental</h3>
+            <h3 className="text-xl font-medium tracking-widest uppercase text-black">Kletáni Dental</h3>
             <p className="text-xs uppercase tracking-widest text-gray-400 mt-2">Visión y Equipo Clínico</p>
           </div>
         </div>

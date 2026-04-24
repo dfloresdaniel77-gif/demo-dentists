@@ -31,7 +31,7 @@ const sampleMediaContent: MediaContentCollection = {
     background:
       'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1920&auto=format&fit=crop', // updated bg
     title: 'Experiencia Dental Inmersiva',
-    date: 'Estudio Kletani',
+    date: 'Estudio Kletáni',
     scrollToExpand: 'Desplázate para Explorar',
     about: {
       overview:
@@ -45,7 +45,7 @@ const sampleMediaContent: MediaContentCollection = {
     background:
       'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1920&auto=format&fit=crop', // Dental tools/room
     title: 'El Arte de la Odontología',
-    date: 'Estudio Kletani',
+    date: 'Estudio Kletáni',
     scrollToExpand: 'Desplázate para Explorar',
     about: {
       overview:
@@ -65,7 +65,7 @@ const MediaContent = ({ mediaType }: { mediaType: 'video' | 'image' }) => {
       {/* Top Minimal Header */}
       <div className='w-full flex flex-col lg:flex-row justify-between items-start lg:items-end border-b border-gray-200 pb-16 mb-20'>
         <div className='flex flex-col'>
-          <span className='text-xs uppercase tracking-[0.3em] text-gray-400 mb-8 font-medium'>La Filosofía Kletani</span>
+          <span className='text-xs uppercase tracking-[0.3em] text-gray-400 mb-8 font-medium'>La Filosofía Kletáni</span>
           <h2 className='text-6xl md:text-7xl lg:text-[7rem] font-extralight tracking-tighter text-black leading-[1.05]'>
             Elevando el <br/><span className='text-gray-400 italic font-serif'>Estándar</span>
           </h2>

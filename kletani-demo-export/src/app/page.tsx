@@ -9,9 +9,9 @@ import Testimonials from "@/components/testimonials";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f5f4f3] text-black">
-      {/* Kletani Header */}
+      {/* Kletáni Header */}
       <header className="fixed top-0 left-0 w-full z-[100] px-8 py-6 flex justify-between items-center pointer-events-none mix-blend-difference">
-        <div className="text-white font-bold text-xl tracking-widest uppercase">Kletani</div>
+        <div className="text-white font-bold text-xl tracking-widest uppercase">Kletáni</div>
         <div className="text-white text-sm tracking-wide lowercase">Estudio Dental</div>
       </header>
 
@@ -47,7 +47,7 @@ export default function Home() {
       <footer className="w-full bg-[#f5f4f3] px-8 py-16 md:py-24 border-t border-gray-200">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start space-y-2">
-            <div className="text-black font-bold text-2xl tracking-widest uppercase">Kletani</div>
+            <div className="text-black font-bold text-2xl tracking-widest uppercase">Kletáni</div>
             <div className="text-gray-500 text-sm tracking-wide lowercase">Estudio Dental</div>
           </div>
           
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
           
           <div className="text-gray-400 text-xs font-light">
-            &copy; {new Date().getFullYear()} Kletani Estudio Dental. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Kletáni Estudio Dental. Todos los derechos reservados.
           </div>
         </div>
       </footer>
