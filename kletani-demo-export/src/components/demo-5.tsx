@@ -12,7 +12,15 @@ export default function DemoFive() {
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    
+    const email = data.Email as string;
+    const phone = data.Teléfono as string;
+
+    if (!email && !phone) {
+      alert("Por favor, proporciona un correo electrónico o un número de teléfono para contactarte.");
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       await fetch("https://submit-form.com/l4Eni4jKF", {
         method: "POST",
@@ -79,13 +87,28 @@ export default function DemoFive() {
                 name="Email"
                 className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
                 placeholder="Correo Electrónico"
-                required 
               />
               <label 
                 htmlFor="email" 
                 className="absolute left-0 top-3 text-gray-400 text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-black peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-black cursor-text"
               >
-                Correo Electrónico
+                Correo Electrónico (Opcional)
+              </label>
+            </div>
+
+            <div className="relative group">
+              <input 
+                type="tel" 
+                id="phone" 
+                name="Teléfono"
+                className="w-full bg-transparent border-b border-gray-300 py-3 text-lg text-black focus:outline-none focus:border-black transition-colors peer placeholder-transparent"
+                placeholder="Teléfono"
+              />
+              <label 
+                htmlFor="phone" 
+                className="absolute left-0 top-3 text-gray-400 text-lg transition-all peer-focus:-top-6 peer-focus:text-xs peer-focus:text-black peer-[:not(:placeholder-shown)]:-top-6 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-black cursor-text"
+              >
+                Número de Teléfono (Opcional)
               </label>
             </div>
 
