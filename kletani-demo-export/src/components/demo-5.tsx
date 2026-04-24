@@ -5,10 +5,12 @@ import { useState } from "react";
 export default function DemoFive() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMsg("");
     
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
@@ -16,7 +18,7 @@ export default function DemoFive() {
     const phone = data.Teléfono as string;
 
     if (!email && !phone) {
-      alert("Por favor, proporciona un correo electrónico o un número de teléfono para contactarte.");
+      setErrorMsg("Por favor, proporciona un correo electrónico o número de teléfono.");
       setIsSubmitting(false);
       return;
     }
@@ -33,6 +35,7 @@ export default function DemoFive() {
       setIsSubmitted(true);
     } catch (error) {
       console.error(error);
+      setErrorMsg("Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.");
     } finally {
       setIsSubmitting(false);
     }
@@ -111,6 +114,12 @@ export default function DemoFive() {
                 Número de Teléfono (Opcional)
               </label>
             </div>
+
+            {errorMsg && (
+              <p className="text-red-500 text-sm font-medium tracking-wide text-center animate-in fade-in">
+                {errorMsg}
+              </p>
+            )}
 
             <button 
               type="submit" 
