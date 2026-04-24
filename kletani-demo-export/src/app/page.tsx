@@ -21,19 +21,27 @@ export default function Home() {
       </section>
 
       {/* Founder Profile Section */}
-      <FounderProfile />
+      <div id="nuestro-enfoque">
+        <FounderProfile />
+      </div>
 
       {/* Services Section */}
-      <DemoThree />
+      <div id="servicios">
+        <DemoThree />
+      </div>
 
       {/* Transformations Slider Section */}
       <DemoFour />
 
       {/* Booking Section (Custom Form) */}
-      <DemoFive />
+      <div id="contacto">
+        <DemoFive />
+      </div>
 
       {/* Testimonials Section */}
-      <Testimonials />
+      <div id="historias">
+        <Testimonials />
+      </div>
 
       {/* Luxury Footer */}
       <footer className="w-full bg-[#f5f4f3] px-8 py-16 md:py-24 border-t border-gray-200">
@@ -44,10 +52,10 @@ export default function Home() {
           </div>
           
           <div className="flex space-x-8 text-sm font-light text-gray-500">
-            <a href="#" className="hover:text-black transition-colors">Servicios</a>
-            <a href="#" className="hover:text-black transition-colors">Nuestro Enfoque</a>
-            <a href="#" className="hover:text-black transition-colors">Historias de Pacientes</a>
-            <a href="#" className="hover:text-black transition-colors">Contacto</a>
+            <a href="#servicios" className="hover:text-black transition-colors">Servicios</a>
+            <a href="#nuestro-enfoque" className="hover:text-black transition-colors">Nuestro Enfoque</a>
+            <a href="#historias" className="hover:text-black transition-colors">Historias de Pacientes</a>
+            <a href="#contacto" className="hover:text-black transition-colors">Contacto</a>
           </div>
           
           <div className="text-gray-400 text-xs font-light">
