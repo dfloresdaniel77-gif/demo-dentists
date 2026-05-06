@@ -148,8 +148,10 @@ const ScrollExpandMedia = ({
     };
   }, [scrollProgress, mediaFullyExpanded, touchStartY]);
   useEffect(() => {
-    // ON MOBILE: Never lock the scroll. The animation will be driven by native scroll instead.
-    if (isMobileState) {
+    // Check mobile status immediately to prevent a "lock-then-unlock" flash on mount
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+    if (isMobile) {
       document.body.style.overflow = '';
       window.dispatchEvent(new Event('startLenis'));
       return;
@@ -170,7 +172,7 @@ const ScrollExpandMedia = ({
       document.body.style.overflow = '';
       window.dispatchEvent(new Event('startLenis'));
     };
-  }, [mediaFullyExpanded, isMobileState]);
+  }, [mediaFullyExpanded]);
 
   // Drive animation via native scroll on mobile
   useEffect(() => {
@@ -222,7 +224,6 @@ const ScrollExpandMedia = ({
     <div
       ref={sectionRef}
       className='transition-colors duration-700 ease-in-out overflow-x-hidden'
-      data-lenis-prevent="true"
     >
       <section className='relative flex flex-col items-center justify-start min-h-[100dvh]'>
         <div className='relative w-full flex flex-col items-center min-h-[100dvh]'>
