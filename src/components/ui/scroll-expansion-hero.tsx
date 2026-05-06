@@ -116,20 +116,24 @@ const ScrollExpandMedia = ({
       setTouchStartY(0);
     };
 
-    window.addEventListener('wheel', handleWheel as unknown as EventListener, {
-      passive: false,
-    });
-    window.addEventListener(
-      'touchstart',
-      handleTouchStart as unknown as EventListener,
-      { passive: false }
-    );
-    window.addEventListener(
-      'touchmove',
-      handleTouchMove as unknown as EventListener,
-      { passive: false }
-    );
-    window.addEventListener('touchend', handleTouchEnd as EventListener);
+    if (!isMobileState) {
+      window.addEventListener('wheel', handleWheel as unknown as EventListener, {
+        passive: false,
+      });
+      window.addEventListener(
+        'touchstart',
+        handleTouchStart as unknown as EventListener,
+        { passive: false }
+      );
+      window.addEventListener(
+        'touchmove',
+        handleTouchMove as unknown as EventListener,
+        { passive: false }
+      );
+      window.addEventListener('touchend', handleTouchEnd as EventListener);
+    } else {
+      window.addEventListener('touchend', handleTouchEnd as EventListener);
+    }
 
     return () => {
       window.removeEventListener(
@@ -146,7 +150,7 @@ const ScrollExpandMedia = ({
       );
       window.removeEventListener('touchend', handleTouchEnd as EventListener);
     };
-  }, [scrollProgress, mediaFullyExpanded, touchStartY]);
+  }, [scrollProgress, mediaFullyExpanded, touchStartY, isMobileState]);
   useEffect(() => {
     // Check mobile status immediately to prevent a "lock-then-unlock" flash on mount
     const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
@@ -225,8 +229,8 @@ const ScrollExpandMedia = ({
       ref={sectionRef}
       className='transition-colors duration-700 ease-in-out overflow-x-hidden'
     >
-      <section className='relative flex flex-col items-center justify-start min-h-[100dvh]'>
-        <div className='relative w-full flex flex-col items-center min-h-[100dvh]'>
+      <section className='relative flex flex-col items-center justify-start min-h-[100vh]'>
+        <div className='relative w-full flex flex-col items-center min-h-[100vh]'>
           <motion.div
             className='absolute inset-0 z-0 h-full w-full'
             initial={{ opacity: 0 }}
