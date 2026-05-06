@@ -145,7 +145,7 @@ export const VideoExpansionTextBlend = () => {
   const currentMedia = sampleMediaContent[mediaType];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
   }, []);
@@ -173,7 +173,7 @@ export const ImageExpansionTextBlend = () => {
   const currentMedia = sampleMediaContent[mediaType];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
   }, []);
@@ -200,7 +200,7 @@ export const VideoExpansion = () => {
   const currentMedia = sampleMediaContent[mediaType];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
   }, []);
@@ -227,7 +227,7 @@ export const ImageExpansion = () => {
   const currentMedia = sampleMediaContent[mediaType];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
   }, []);
@@ -253,7 +253,7 @@ const Demo = () => {
   const currentMedia = sampleMediaContent[mediaType];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
   }, [mediaType]);

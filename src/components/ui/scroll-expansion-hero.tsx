@@ -79,7 +79,7 @@ const ScrollExpandMedia = ({
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (!touchStartY) return;
+      if (!touchStartY || isMobileState) return; // Disable hijacking on mobile
 
       const touchY = e.touches[0].clientY;
       const deltaY = touchStartY - touchY;
@@ -148,6 +148,13 @@ const ScrollExpandMedia = ({
     };
   }, [scrollProgress, mediaFullyExpanded, touchStartY]);
   useEffect(() => {
+    // ON MOBILE: Never lock the scroll. The animation will be driven by native scroll instead.
+    if (isMobileState) {
+      document.body.style.overflow = '';
+      window.dispatchEvent(new Event('startLenis'));
+      return;
+    }
+
     if (!mediaFullyExpanded) {
       document.body.style.overflow = 'hidden';
       // Stop Lenis from scrolling the page
@@ -163,7 +170,34 @@ const ScrollExpandMedia = ({
       document.body.style.overflow = '';
       window.dispatchEvent(new Event('startLenis'));
     };
-  }, [mediaFullyExpanded]);
+  }, [mediaFullyExpanded, isMobileState]);
+
+  // Drive animation via native scroll on mobile
+  useEffect(() => {
+    if (!isMobileState) return;
+
+    const handleNativeScroll = () => {
+      // On mobile, we use the first 400px of scroll to drive the hero expansion
+      const currentScroll = window.scrollY;
+      const progress = Math.min(currentScroll / 400, 1.2);
+      
+      setScrollProgress(progress);
+      if (progress >= 1) {
+        setShowContent(true);
+      } else {
+        setShowContent(false);
+      }
+      
+      if (progress >= 1.2) {
+        setMediaFullyExpanded(true);
+      } else {
+        setMediaFullyExpanded(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleNativeScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleNativeScroll);
+  }, [isMobileState]);
 
   useEffect(() => {
     const checkIfMobile = (): void => {
